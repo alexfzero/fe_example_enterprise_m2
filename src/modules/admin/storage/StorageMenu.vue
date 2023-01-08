@@ -1,6 +1,8 @@
 <template>
   <div>
-    <v-container class="mt-15">
+    <PageHeader :title="title"></PageHeader>
+
+    <v-container>
       <v-row
           justify="center"
           align="center"
@@ -23,7 +25,8 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-container class="mt-10">
+
+    <v-container class="mt-5">
       <div v-if="isStorage">
         <StorageList></StorageList>
       </div>
@@ -36,14 +39,21 @@
 
 <script>
 import StorageList from "@/modules/admin/storage/StorageList.vue";
-import DashBoardCard from "@/modules/core/components/Cards.vue";
+import DashBoardCard from "@/modules/admin/storage/Cards.vue";
 import OperationList from "@/modules/admin/storage/OperationList.vue";
+import PageHeader from "@/modules/core/components/PageHeader.vue";
 
 export default {
   name: "StorageMenu",
-  components: {OperationList, DashBoardCard, StorageList},
+  components: {
+    PageHeader,
+    OperationList,
+    DashBoardCard,
+    StorageList
+  },
   data() {
     return {
+      title: 'Склад',
       isStorage: true
     }
   },

@@ -1,12 +1,10 @@
 <template>
-  <div>
-    asdasd
-  </div>
+
 </template>
 
 <script>
 export default {
-  name: "operationType"
+  name: "ContractEditForm"
 }
 </script>
 

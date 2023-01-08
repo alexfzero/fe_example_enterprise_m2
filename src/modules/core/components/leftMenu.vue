@@ -124,19 +124,19 @@ export default {
       type: Array,
       default: () => [
         {
-          link: 'HomePage',
+          link: 'OrderList',
           name: 'Order',
           tooltip: 'Order',
           icon: 'bx-credit-card-front',
         },
         {
-          link: 'mainPage',
+          link: 'ContractList',
           name: 'Contracts',
           tooltip: 'Contracts',
           icon: 'bx-file-blank',
         },
         {
-          link: 'mainPage',
+          link: 'FundsList',
           name: 'Flow funds',
           tooltip: 'FlowFunds',
           icon: 'bx-money',
@@ -148,13 +148,13 @@ export default {
           icon: 'bx-spreadsheet',
         },
         {
-          link: 'mainPage',
+          link: 'OrgList',
           name: 'Organizations',
           tooltip: 'Organizations',
           icon: 'bx-buildings',
         },
         {
-          link: 'MainMenu',
+          link: 'AdminMenu',
           name: 'Admin',
           tooltip: 'Admin',
           icon: 'bx-cog',

@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "EditForm"
+  name: "FundsEditForm"
 }
 </script>
 

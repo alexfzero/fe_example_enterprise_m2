@@ -1,0 +1,58 @@
+<template>
+  <div>
+    <PageHeader :title="title"></PageHeader>
+
+    <v-container class="page-content">
+      <v-toolbar
+          class="removeBtnPaddingRight"
+          color="#DADADA"
+          dense
+          flat
+      >
+        <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp" class="pa-2">
+          <v-btn
+              depressed
+              outlined
+              @click="+1"
+          >
+            Добавить новую операцию
+          </v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+      <v-data-table
+          :headers="headers"
+          :items="items"
+          :loading="loadingPage"
+          class="elevation-1"
+          style="width: 400px"
+      ></v-data-table>
+    </v-container>
+  </div>
+</template>
+
+<script>
+import PageHeader from "@/modules/core/components/PageHeader.vue";
+
+export default {
+  name: "TypeList",
+  components: {PageHeader},
+  data() {
+    return {
+      title: 'Типы операций',
+      loadingPage: false,
+      items: [
+        // {number: 'Номер', model: 'Марка', color: 'Цвет', actions: 'Действия'},
+      ],
+      headers: [
+        {text: 'ID', value: 'ID', align: 'start', sortable: false, width: '25px'},
+        {text: 'Наименование', value: 'name', align: 'start', sortable: false},
+      ],
+    }
+  },
+  methods: {}
+}
+</script>
+
+<style scoped>
+
+</style>
