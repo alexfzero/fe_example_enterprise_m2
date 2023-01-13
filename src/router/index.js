@@ -9,6 +9,10 @@ import ContractList from "@/modules/admin/contract/ContractList.vue";
 import FundsList from "@/modules/admin/fund/FundsList.vue";
 import OrgList from "@/modules/admin/organization/OrgList.vue";
 import TypeList from "@/modules/admin/operation_type/TypeList.vue";
+import StatusList from "@/modules/admin/contract_status/StatusList.vue";
+import DepList from "@/modules/admin/departments/DepList.vue";
+import PosList from "@/modules/admin/positions/PosList.vue";
+import UserList from "@/modules/admin/users/UserList.vue";
 
 Vue.use(Router)
 
@@ -56,23 +60,23 @@ let router = new Router({
         },
         {
             path: '/admin/references/contracts',
-            name: 'AdminMenu',
-            component: AdminMenu
+            name: 'ContractStatus',
+            component: StatusList
         },
         {
             path: '/admin/references/users',
-            name: 'AdminMenu',
-            component: AdminMenu
+            name: 'Users',
+            component: UserList
         },
         {
             path: '/admin/references/departments',
-            name: 'AdminMenu',
-            component: AdminMenu
+            name: 'Departments',
+            component: DepList
         },
         {
             path: '/admin/references/positions',
-            name: 'AdminMenu',
-            component: AdminMenu
+            name: 'Positions',
+            component: PosList
         }
     ]
 })

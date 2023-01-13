@@ -79,16 +79,47 @@
               <span class="tooltip">{{ menuItem.tooltip || menuItem.name }}</span>
             </li>
           </span>
+
+          <span v-if="user.authorized">
+            <li>
+              <a>
+                <i
+                    class="bx bx-log-out"
+                />
+                <span class="links_name text-decoration-underline"> {{user.username}} </span>
+              </a>
+              <span class="tooltip"></span>
+            </li>
+          </span>
+          <div v-else>
+            <li>
+              <a @click.stop="isLoginOpened = true">
+                <i
+                    class="bx bx-log-in"
+                />
+                <span class="links_name">login {{isLoginOpened}}</span>
+              </a>
+              <span class="tooltip">login</span>
+            </li>
+          </div>
         </ul>
       </div>
     </div>
+    <LoginDialog
+        :is-opened="isLoginOpened"
+        @close="Auth"
+    ></LoginDialog>
   </div>
 </template>
 
 <script>
 
+
+import LoginDialog from "@/modules/core/components/login.vue";
+
 export default {
   name: 'leftMenu',
+  components: {LoginDialog},
   props: {
     //! Menu settings
     isMenuOpen: {
@@ -218,7 +249,19 @@ export default {
   },
   data() {
     return {
-      isOpened: false
+      isOpened: false,
+      isLoginOpened: false,
+      user: {
+        username: 'Guest',
+        authorized: false
+      }
+    }
+  },
+  methods: {
+    // eslint-disable-next-line no-unused-vars
+    Auth(event) {
+      this.isLoginOpened = false
+      console.log(event)
     }
   },
   mounted() {

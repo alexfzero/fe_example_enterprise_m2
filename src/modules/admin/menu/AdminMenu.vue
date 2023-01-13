@@ -60,7 +60,8 @@ export default {
       router_items: {
         name_list: ['Operations type', 'Contract statuses', 'Users', 'Departments', 'Positions'],
         icon: ['type_specimen', 'description', 'people', 'badge', 'person_pin_circle'],
-        link: ['/admin/references/operations', '/', '/', '/', '/']
+        link: ['/admin/references/operations', '/admin/references/contracts', '/admin/references/users',
+          '/admin/references/departments', '/admin/references/positions']
       }
     }
   },
